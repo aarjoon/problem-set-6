@@ -40,7 +40,14 @@ function sayHello() {
  */
 
 function drawRectangle() {
-  let
+  let rectangle = document.getElementById('canvas2').getContext('2d');
+  if (height =< 1) {
+    let height = prompt("Enter Height");
+  }
+  let width = prompt("Enter Width");
+  let x = prompt("Enter X-Coordinate");
+  let y = prompt("Enter Y-Coordinate");
+  rectangle.strokeRect(x,y,width,height);
 }
 
 /*
@@ -69,6 +76,9 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
+  let rectangleColor = document.getElementById('canvas3').getContext('2d');
+
+
 
 }
 
@@ -102,6 +112,8 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+  let triangle = document.getElementById('canvas4').getContext('2d');
+
 
 }
 
@@ -125,6 +137,7 @@ function drawTriangle() {
  */
 
 function drawSmileyFace() {
+  let smiley = document.getElementById('canvas5').getContext('2d');
 
 }
 
@@ -147,6 +160,8 @@ function drawSmileyFace() {
  */
 
 function drawStar() {
+  let star = document.getElementById('canvas6').getContext('2d');
+
 
 }
 
@@ -166,6 +181,8 @@ function drawStar() {
  */
 
 function drawStopSign() {
+  let stop = document.getElementById('canvas7').getContext('2d');
+
 
 }
 
@@ -188,6 +205,8 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
+  let pyramid = document.getElementById('canvas8').getContext('2d');
+
 
 }
 
@@ -221,5 +240,7 @@ function drawPyramid() {
  */
 
 function drawHouse() {
+  let house = document.getElementById('canvas9').getContext('2d');
+
 
 }
