@@ -40,7 +40,31 @@ function sayHello() {
  */
 
 function drawRectangle() {
-  let
+  let rectHeight;
+do {
+  rectHeight = Number(prompt('Enter Height Of Rectangle Greater Than 5.'));
+  } 
+  while (rectHeight < 1 || !Number.isInteger (rectHeight));
+
+  let rectWidth;
+do {
+  rectWidth = Number(prompt('Enter Width Of Rectangle Greater Than 5.'));
+} while (rectWidth < 1 || !Number.isInteger (rectWidth));
+
+  let rectX;
+do {
+  rectX = Number(prompt('Enter X-Coordinate Greater Than 5..'));
+} while (rectX < 5 || !Number.isInteger (rectX));
+
+  let rectY;
+do {
+  rectY = Number(prompt('Please Y-Coordinate Greater Than 5.'));
+} while (rectY < 5 || !Number.isInteger (rectY));
+
+let rectangleDrawing = document.getElementById('canvas2').getContext('2d');
+rectangleDrawing.strokeRect(rectHeight, rectWidth, rectX, rectY);
+
+rectangleDrawing.clearRect(0, 0, canvas2.rectHeight, canvas2.rectWidth);
 }
 
 /*
@@ -69,6 +93,19 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
+  let canvas = document.getElementById('canvas3');
+  let context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  let color;
+  while (true){
+    color = prompt ("Please Enter a Valid Color")
+    if(color=="black" || color=="blue" || color=="green" || color=="orange" || color=="purple" || color=="red" || color=="yellow") {
+      break;
+    }
+  }
+  context.fillStyle = color;
+  context.fillRect (10,10,100,50);
 
 }
 
@@ -102,7 +139,38 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
-
+  let x=10;
+  let y=10;
+  let a;
+  let b;
+  let c;
+  let canvas = document.getElementById('canvas4');
+  let context = canvas.getContext('2d');
+  context.clearRect (0, 0, canvas.width, canvas.height);
+  while (true) {
+	a = Number(prompt("Enter side 1 length"));
+	b = Number(prompt("Enter side 2 length"));
+	c = Number(prompt("Enter hypotenuse length"));
+	if(((a**2) + (b**2) == (c**2)) && a>0 && b>0 && c>0 && canvas.width-x-a>=0 && canvas.height-y-b>=0){
+		break;
+	} else {
+		alert ("That is not a valid triangle")
+	}
+ //Line A
+ context.beginPath(); //Begins a path
+ context.moveTo(x,y); //Choses the starting point
+ context.lineTo(x,y+a); //Line A coordinates: It is a vertical line, therefore the same x value but different y-value
+ context.stroke(); //Draws the line
+ //Line B
+ context.beginPath();
+ context.moveTo(x,y+a);
+ context.lineTo(x+b,y+a);
+ context.stroke();
+ //Hypotenuse
+ context.beginPath();
+ context.moveTo(x,y);
+ context.lineTo(x+b,y+a);
+ context.stroke();
 }
 
 /*
