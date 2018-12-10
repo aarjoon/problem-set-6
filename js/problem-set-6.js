@@ -139,8 +139,8 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
-  let x=10;
-  let y=10;
+  let x = 10;
+  let y = 10;
   let a;
   let b;
   let c;
@@ -151,7 +151,8 @@ function drawTriangle() {
 	a = Number(prompt("Enter side 1 length"));
 	b = Number(prompt("Enter side 2 length"));
 	c = Number(prompt("Enter hypotenuse length"));
-	if(((a**2) + (b**2) == (c**2)) && a>0 && b>0 && c>0 && canvas.width-x-a>=0 && canvas.height-y-b>=0){
+}
+	if (((a**2) + (b**2) == (c**2)) && a > 0 && b > 0 && c > 0 && canvas.width - x - a >= 0 && canvas.height - y - b >= 0) {
 		break;
 	} else {
 		alert ("That is not a valid triangle")
@@ -193,7 +194,10 @@ function drawTriangle() {
  */
 
 function drawSmileyFace() {
+  Number(prompt("Enter Radius Of Your Smiley Face");
   let smiley = document.getElementById('canvas5').getContext('2d');
+  context.beginPath();
+  context.arc()
 
 }
 
