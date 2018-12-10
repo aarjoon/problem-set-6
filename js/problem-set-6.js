@@ -40,14 +40,31 @@ function sayHello() {
  */
 
 function drawRectangle() {
-  let rectangle = document.getElementById('canvas2').getContext('2d');
-  if (height =< 1) {
-    let height = prompt("Enter Height");
+  let rectHeight;
+do {
+  rectHeight = Number(prompt('Enter Height Of Rectangle Greater Than 5.'));
   }
-  let width = prompt("Enter Width");
-  let x = prompt("Enter X-Coordinate");
-  let y = prompt("Enter Y-Coordinate");
-  rectangle.strokeRect(x,y,width,height);
+  while (rectHeight < 1 || !Number.isInteger (rectHeight));
+
+  let rectWidth;
+do {
+  rectWidth = Number(prompt('Enter Width Of Rectangle Greater Than 5.'));
+} while (rectWidth < 1 || !Number.isInteger (rectWidth));
+
+  let rectX;
+do {
+  rectX = Number(prompt('Enter X-Coordinate Greater Than 5..'));
+} while (rectX < 5 || !Number.isInteger (rectX));
+
+  let rectY;
+do {
+  rectY = Number(prompt('Please Y-Coordinate Greater Than 5.'));
+} while (rectY < 5 || !Number.isInteger (rectY));
+
+let rectangle = document.getElementById('canvas2').getContext('2d');
+rectangle.strokeRect(rectHeight, rectWidth, rectX, rectY);
+
+rectangle.clearRect(0, 0, canvas2.rectHeight, canvas2.rectWidth);
 }
 
 /*
@@ -76,9 +93,19 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-  let rectangleColor = document.getElementById('canvas3').getContext('2d');
+  let canvas = document.getElementById('canvas3');
+  let context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
-
+  let color;
+  while (true){
+    color = prompt ("Please Enter a Valid Color")
+    if(color=="black" || color=="blue" || color=="green" || color=="orange" || color=="purple" || color=="red" || color=="yellow") {
+      break;
+    }
+  }
+  context.fillStyle = color;
+  context.fillRect (10,10,100,50);
 
 }
 
@@ -112,9 +139,38 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
-  let triangle = document.getElementById('canvas4').getContext('2d');
-
-
+  let x=10;
+  let y=10;
+  let a;
+  let b;
+  let c;
+  let canvas = document.getElementById('canvas4');
+  let context = canvas.getContext('2d');
+  context.clearRect (0, 0, canvas.width, canvas.height);
+  while (true) {
+	a = Number(prompt("Enter side 1 length"));
+	b = Number(prompt("Enter side 2 length"));
+	c = Number(prompt("Enter hypotenuse length"));
+	if(((a**2) + (b**2) == (c**2)) && a>0 && b>0 && c>0 && canvas.width-x-a>=0 && canvas.height-y-b>=0){
+		break;
+	} else {
+		alert ("That is not a valid triangle")
+	}
+ //Line A
+ context.beginPath(); //Begins a path
+ context.moveTo(x,y); //Choses the starting point
+ context.lineTo(x,y+a); //Line A coordinates: It is a vertical line, therefore the same x value but different y-value
+ context.stroke(); //Draws the line
+ //Line B
+ context.beginPath();
+ context.moveTo(x,y+a);
+ context.lineTo(x+b,y+a);
+ context.stroke();
+ //Hypotenuse
+ context.beginPath();
+ context.moveTo(x,y);
+ context.lineTo(x+b,y+a);
+ context.stroke();
 }
 
 /*
