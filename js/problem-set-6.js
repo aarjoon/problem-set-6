@@ -12,7 +12,7 @@
 
 function sayHello() {
   let hello = document.getElementById('canvas1').getContext('2d');
-  
+
   hello.clearRect(0, 0, 1024, 512);
   hello.font = "48px sans-serif";
   hello.strokeText("Hello, World!", 10, 50);
@@ -42,7 +42,7 @@ function sayHello() {
  */
 
 function drawRectangle() {
-  let rect = document.getElementById('canvas2').getContext("2d");
+  let rect = document.getElementById('canvas2').getContext('2d');
   let rectHeight = Number(prompt("Height:"));
   let rectWidth = Number(prompt("Width:"));
   let x =  Number(prompt("X:"));
@@ -96,7 +96,7 @@ function drawRectangle() {
 
 function drawColoredRectangle() {
   let coloredRect = document.getElementById('canvas3').getContext('2d');
-  coloredRect.clearRect(0, 0, canvas.width, canvas.height);
+  coloredRect.clearRect(0, 0, 1024, 512);
 
   let color;
   while (true) {
@@ -107,6 +107,7 @@ function drawColoredRectangle() {
     } else {
 	alert(color + " is not a supported color");
 	coloredRect.clearRect(0, 0, 1024, 512);
+    }
   }
 }
 
@@ -152,10 +153,10 @@ function drawTriangle() {
   }
   let a = Math.min(...sides);
   let c = Math.max(...sides);
-  let b = sides.reduce((x,y) => x + y, 0) - a - c;
+  let b = sides.reduce((x, y) => x + y, 0) - a - c;
   if (c * c != a * a + b * b){
     alert("This is not a valid right triangle.");
-  } else if (a>1024 || b>512){
+  } else if (a > 1024 || b > 512){
     alert("The triangle will not fit on the canvas.");
   } else {
     op.beginPath();
@@ -196,9 +197,9 @@ function drawSmileyFace() {
     radius = Number(prompt("Radius"));
   } while (isNaN(radius) || radius < 1 || radius > 250.5);
   smiley.beginPath();
-  smiley.arc(radius+10, radius+10, radius, 0, Math.PI*2, true);
-  smiley.moveTo(10+radius*.6, radius+10-radius/2);
-  smiley.arc(radius+10-radius/2, radius+10-radius/2, radius*.1, 0, Math.PI*2, true);
+  smiley.arc(radius + 10, radius + 10, radius, 0, Math.PI * 2, true);
+  smiley.moveTo(10 + radius * .6, radius+10-radius/2);
+  smiley.arc(radius+10-radius/2, radius+10 - radius / 2, radius * .1, 0, Math.PI*2, true);
   smiley.moveTo(10+radius*1.6, radius+10-radius/2);
   smiley.arc(radius+10+radius/2, radius+10-radius/2, radius*.1, 0, Math.PI*2, true);
   smiley.moveTo(10+radius*1.7, radius+10);
@@ -228,7 +229,7 @@ function drawSmileyFace() {
 function drawStar() {
   let star = document.getElementById('canvas6').getContext('2d');
   star.clearRect(0, 0, 1024, 512);
-  
+
   let outerRadius;
   let innerRadius;
   do {
@@ -318,7 +319,7 @@ function drawStopSign() {
 }
 
 
-}
+
 
 /*
  * Pyramid. 7 points.
@@ -410,7 +411,7 @@ function drawPyramid() {
 function drawHouse() {
   let house = document.getElementById('canvas9').getContext('2d');
   house.clearRect(0,0,1024,760);
-  
+
   let houseColor = prompt("House Color:");
   let doorColor = prompt("Front Door Color:");
   if ((houseColor == "blue" || houseColor == "brown"|| houseColor == "green" || houseColor == "orange" || houseColor == "purple" || houseColor == "red" || houseColor == "yellow") && (doorColor == "blue" || doorColor == "brown"|| doorColor == "green" || doorColor == "orange" || doorColor == "purple" || doorColor == "red" || doorColor == "yellow")){
