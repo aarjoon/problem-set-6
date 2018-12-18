@@ -141,7 +141,7 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
-  let triangle = document.getElementById('canvas4').getContext('2d');
+  let triangl = document.getElementById('canvas4').getContext('2d');
   triangle.clearRect(0, 0, 1024, 512);
   let sides = [];
   let input;
